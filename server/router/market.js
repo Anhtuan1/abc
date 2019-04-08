@@ -6,8 +6,8 @@ const BFX = require('bitfinex-api-node');
 const { Order } = require('bfx-api-node-models');
 const auth = require('./auth');
 
-const API_KEY = 'SesoeW8xcfkfWzrTlfve8jdR8QDPidw9AZjWafkB3MF'; // ==> paste key here
-const API_SECRET = 'XpwUEfvLk0rE5Vu2WyNmpT9HUKq8sDu1gzj3OuMokl4'; // ==? paste secret key here
+const API_KEY = ''; // ==> paste key here
+const API_SECRET = ''; // ==? paste secret key here
 
 // validate API
 const bfx = auth.authentication(API_KEY, API_SECRET);
