@@ -1,0 +1,23 @@
+{
+  "name": "bitfinex-ea",
+  "version": "0.0.1",
+  "description": "a bitfinex EA",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "keywords": [
+    "a",
+    "bitfinex",
+    "trading",
+    "EA"
+  ],
+  "author": "TrungTA",
+  "license": "ISC",
+  "dependencies": {
+    "bfx-api-node-models": "^1.0.8",
+    "bitfinex-api-node": "^2.0.0-beta.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
