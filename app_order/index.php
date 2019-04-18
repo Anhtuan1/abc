@@ -42,6 +42,7 @@ foreach ($buy_data_new as $value) {
 	
 	if($flag==false){		
 		fwrite($file_check,'BUY '.join(" ",$value).PHP_EOL);
+		$xml = file_get_contents("http://localhost:3000?symbol=t".$value[1].'USD&amount='.$value[2]);
 	}
     
 }
@@ -60,6 +61,7 @@ foreach ($sell_data_new as $value) {
 	
 	if($flag==false){		
 		fwrite($file_check, 'SELL '.join(" ",$value).PHP_EOL);
+		$xml = file_get_contents("http://localhost:3000?symbol=t".$value[1].'USD&amount=-'.$value[2]);
 	}
     
 }
