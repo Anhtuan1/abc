@@ -31,7 +31,7 @@ if(req.query.symbol &&req.query.amount){
 	var ws = bfx.ws(2);
 
 	ws.on('error', (err) => {
-		console.log(err);
+		//console.log(err);
 	})
 
 	ws.on('open', () => {
@@ -57,18 +57,18 @@ if(req.query.symbol &&req.query.amount){
 		o.registerListeners()
 
 		o.on('update', () => {
-			console.log(`order updated: ${o.serialize()}`)
+			//console.log(`order updated: ${o.serialize()}`)
 		})
 
 		o.on('close', () => {
-			console.log(`order closed: ${o.status}`);
+			//console.log(`order closed: ${o.status}`);
 			ws.close()
 		})
 
 		o.submit().then(() => {
 			console.log(`submitted order ${o.id}`)
 		}).catch((err) => {
-			console.log(err)
+			//console.log(err)
 			ws.close()
 		})
 	})

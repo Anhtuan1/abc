@@ -1,0 +1,1 @@
+﻿$xml = file_get_contents("http://localhost:3000?symbol=t".$value[1].'USD&amount='.$value[2

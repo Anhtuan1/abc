@@ -1,3 +1,7 @@
+﻿
+setTimeout(function(){
+
+if(location.toString()=='https://remitano.com/btc/vn/dashboard/escrow/trades/completed'){
 datasend = {'buy':[],'sell':[]};
 
 listItems=document.querySelectorAll('.trades-list li');
@@ -5,6 +9,7 @@ for (let i = 0; i < listItems.length; i++) {
 	type = listItems[i].getElementsByClassName('trade-prefix')[0].textContent;
 	status = listItems[i].getElementsByClassName('trade-status')[0].textContent;
 	amount = listItems[i].getElementsByClassName('currency-amount')[0].textContent;
+amount = amount.replace(',','.');
 	id = listItems[i].getElementsByClassName('btn-default')[0].textContent;
 	if( type == '[Mua]' &&status== 'Đã hoàn tất' ){
 		arr1 = amount.trim().split` `.reverse();
@@ -20,7 +25,7 @@ for (let i = 0; i < listItems.length; i++) {
 }
 
 var xhr = new XMLHttpRequest();
-var url = "http://localhost:81/app_order/index.php";
+var url = "http://localhost/app_order/index.php";
 xhr.open("POST", url, true);
 xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
 xhr.onreadystatechange = function () {
@@ -32,4 +37,13 @@ xhr.onreadystatechange = function () {
 
 var data = JSON.stringify(datasend);
 xhr.send("foo="+data);
+console.log(data);
+setTimeout(function() {
+
+  location.reload();
+
+}, 2500);
+}
+ }, 5000);
+
 
